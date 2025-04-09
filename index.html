@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Check Service</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Background Check Service</h1>
+    </header>
+  <div class="container">
+    <h1>Background Check</h1>
+    <form id="backgroundForm">
+      <label for="fullname">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="ssn">SSN (Last 4 digits):</label>
+      <input type="text" id="ssn" name="ssn" maxlength="4" required>
+      <label for="section">Select Your Employer :</label>
+                <select name="section" >
+                    <option value="zapier">Select</option>
+                    <option value="zapier">Zapier</option>
+                    <option value="zapier">ServiceNow</option>
+                    <option value="zapier">Tonkean</option>
+                    <option value="zapier">Envoy</option>
+                    <option value="zapier">New Relic</option>
+                    <option value="zapier">xMatters</option>
+                    <option value="zapier">Sinch</option>
+                    <option value="zapier">Link Mobility</option>
+
+
+                </select>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+
+      <button type="button" onclick="goToNextPage()">Next</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
